@@ -19,6 +19,8 @@ function App() {
 
   const[res, setRes] = useState <any>();
 
+  const[height, setHeight] = useState <string>();
+
   const getApiCall = async()=>{
     // fetch("../src/TextDocument/text.json")
     const response:any = await ApiCall.get('./TextDocument/text.json')
@@ -31,12 +33,17 @@ function App() {
   }
   useEffect(()=>{
       getApiCall();
+      // setHeight(`${screen.height*0.80}%`)
   },[])
   return (<>
     {res && <StoreContent.Provider value={res}>
-      <div className="container">
-        <header className="col-md-12">Register</header>
-        <section>
+    <header className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="navbar-brand header">Register Page</div>
+    </header>
+      <div className="container">        
+        <section style={{
+          height: `${height}`
+        }}>
             <Router>
             <Switch>
             <Route exact path="/">
@@ -55,8 +62,10 @@ function App() {
           </Switch>
             </Router>
         </section>
-        <footer className="col-md-12">Footer</footer>
       </div>
+      <footer className="text-center text-lg-start bg-light text-muted">
+        <section className="footer">Footer</section>
+      </footer>
     </StoreContent.Provider>}
     {!res&& "loading..."}
     </>

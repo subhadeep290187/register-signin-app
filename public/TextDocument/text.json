@@ -4,5 +4,6 @@
     "phone":"Phone Number",
     "reguiredMsg": "is required.",
     "noOnly": "should be of number type.",
+    "successRegister": "Successfully Register Completed",
     "summaryErr": " Fixed the Below Errors"
 }
