@@ -1,0 +1,8 @@
+{
+    "fname":"Firstname",
+    "lname":"Lastname",
+    "phone":"Phone Number",
+    "reguiredMsg": "is required.",
+    "noOnly": "should be of number type.",
+    "summaryErr": " Fixed the Below Errors"
+}
